@@ -17,37 +17,37 @@ public class startMain {
 			splitLineArr= inputLine.split(" ");
 			switch(splitLineArr[0]) {
 				case "CREATE":
-					createOperation cr = new createOperation();
-					cr.executeCreate(shapesList, splitLineArr);
+					commandInvoker cr = new commandInvoker(new createOperation());
+					cr.executeCreateStrategyInterface(shapesList, splitLineArr);
 					
 					break;
 				case "SELECT":
-					createOperation se = new createOperation();
-					se.executeSelect(shapesList, splitLineArr);
+					commandInvoker se = new commandInvoker(new createOperation());
+					se.executeSelectStrategyInterface(shapesList, splitLineArr);
 					break;
 				case "MOVE":
-					createOperation mo = new createOperation();
-					mo.executeMove(shapesList, splitLineArr);
+					commandInvoker mo = new commandInvoker(new createOperation());
+					mo.executeMoveStrategyInterface(shapesList, splitLineArr);
 					break;
 				case "DRAW":
-					createOperation draw = new createOperation();
-					draw.executeDraw(shapesList, splitLineArr);
+					commandInvoker draw = new commandInvoker(new createOperation());
+					draw.executeDrawStrategyInterface(shapesList, splitLineArr);
 					break;
 				case "COLOR":
-					createOperation co = new createOperation();
-					co.executeColor(shapesList, splitLineArr);
+					commandInvoker co = new commandInvoker(new createOperation());
+					co.executeColorStrategyInterface(shapesList, splitLineArr);
 					break;
 				case "DELETE":
-					createOperation de = new createOperation();
-					de.executeDelete(shapesList, splitLineArr);
+					commandInvoker de = new commandInvoker(new createOperation());
+					de.executeDeleteStrategyInterface(shapesList, splitLineArr);
 					break;
 				case "DRAWSCENE":
-					createOperation drSc = new createOperation();
-					drSc.executeDrawScene(shapesList, splitLineArr);
+					commandInvoker drSc = new commandInvoker(new createOperation());
+					drSc.executeDrawSceneStrategyInterface(shapesList, splitLineArr);
 					break;
 				case "UNDO":
-					createOperation un = new createOperation();
-					un.executeUndo(shapesList, splitLineArr);
+					commandInvoker un = new commandInvoker(new createOperation());
+					un.executeUndoStrategyInterface(shapesList, splitLineArr);
 					break;
 				default:
 					System.out.println("Invalid Command");
