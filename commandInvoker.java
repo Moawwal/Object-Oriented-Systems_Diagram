@@ -12,23 +12,23 @@ public class commandInvoker {
 	public LinkedList<String> executeCreateStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
 		 return stratInter.executeCreate(shapesList, crOperArr);
 	}
-	public void executeSelectStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
-		  stratInter.executeSelect(shapesList, crOperArr);
+	public int executeSelectStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
+		  return stratInter.executeSelect(shapesList, crOperArr);
 	}
-	public void executeMoveStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
-		 stratInter.executeMove(shapesList, crOperArr);
+	public LinkedList<String> executeMoveStrategyInterface(LinkedList<String> shapesList, String crOperArr[],int index){
+		 return stratInter.executeMove(shapesList, crOperArr, index);
 	}
-	public String executeDrawStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
-		 return stratInter.executeDraw(shapesList, crOperArr);
+	public void executeDrawStrategyInterface(LinkedList<String> shapesList, String crOperArr[], int index){
+		 stratInter.executeDraw(shapesList, crOperArr, index);
 	}
-	public void executeColorStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
-		stratInter.executeColor(shapesList, crOperArr);
+	public LinkedList<String> executeColorStrategyInterface(LinkedList<String> shapesList, String crOperArr[], int index){
+		return stratInter.executeColor(shapesList, crOperArr, index);
 	}
-	public void executeDeleteStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
-		 stratInter.executeDelete(shapesList, crOperArr);
+	public void executeDeleteStrategyInterface(LinkedList<String> shapesList, String crOperArr[], int index){
+		 stratInter.executeDelete(shapesList, crOperArr, index);
 	}
-	public String executeDrawSceneStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
-		 return stratInter.executeDrawScene(shapesList, crOperArr);
+	public void executeDrawSceneStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
+		 stratInter.executeDrawScene(shapesList, crOperArr);
 	}
 	public void executeUndoStrategyInterface(LinkedList<String> shapesList, String crOperArr[]){
 		 stratInter.executeUndo(shapesList, crOperArr);

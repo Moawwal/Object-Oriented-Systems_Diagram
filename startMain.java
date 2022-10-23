@@ -11,6 +11,7 @@ public class startMain {
 		
 		String inputLine = br.readLine();
 		String splitLineArr[];
+		int index=-1;
 		LinkedList<String> shapesList = new LinkedList<String>();
 		
 		while (inputLine != null) {
@@ -23,23 +24,23 @@ public class startMain {
 					break;
 				case "SELECT":
 					commandInvoker se = new commandInvoker(new createOperation());
-					se.executeSelectStrategyInterface(shapesList, splitLineArr);
+					index=se.executeSelectStrategyInterface(shapesList, splitLineArr);
 					break;
 				case "MOVE":
 					commandInvoker mo = new commandInvoker(new createOperation());
-					mo.executeMoveStrategyInterface(shapesList, splitLineArr);
+					shapesList=mo.executeMoveStrategyInterface(shapesList, splitLineArr,index);
 					break;
 				case "DRAW":
 					commandInvoker draw = new commandInvoker(new createOperation());
-					draw.executeDrawStrategyInterface(shapesList, splitLineArr);
+					draw.executeDrawStrategyInterface(shapesList, splitLineArr, index);
 					break;
 				case "COLOR":
 					commandInvoker co = new commandInvoker(new createOperation());
-					co.executeColorStrategyInterface(shapesList, splitLineArr);
+					shapesList=co.executeColorStrategyInterface(shapesList, splitLineArr,index);
 					break;
 				case "DELETE":
 					commandInvoker de = new commandInvoker(new createOperation());
-					de.executeDeleteStrategyInterface(shapesList, splitLineArr);
+					de.executeDeleteStrategyInterface(shapesList, splitLineArr,index);
 					break;
 				case "DRAWSCENE":
 					commandInvoker drSc = new commandInvoker(new createOperation());
