@@ -1,26 +1,38 @@
 package Memento;
 
+import Commands.UndoCommand;
+import Patterns.shapeStrategy;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
 public class originator {
     private final caretaker ct;
+
+    public LinkedList<String> sizeshapesList;
     private final Deque<caretaker.memento> commandhistory;
+    shapeStrategy shapeStrat;
 
     public originator() {
+
         ct = new caretaker();
         commandhistory = new LinkedList<>();
     }
-    public void write(String commandtext){
-        ct.set(commandtext);
-        commandhistory.offer(ct.takeSnapshot());
-    }
-    public void undo(){
-        if (commandhistory.isEmpty()){
-            return;
+
+    public void undo(int index){
+
+        if (index>shapeStrat.shapesList.size()){
+            System.out.println("ERROR: invalid shape for SELECT");
         }
-        commandhistory.pollLast();
-        ct.restore(commandhistory.peekLast());
+        else {
+
+            shapeStrat.shapesList.remove(index);
+            shapeStrat.shapesList.add(index, shapeStrat.prevShapes.remove(shapeStrat.prevShapes.size() - 1));
+        }
+
+    }
+    public void printText(){
+        System.out.println(ct.getCommandtext());
     }
 
 

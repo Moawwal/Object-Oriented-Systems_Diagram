@@ -1,7 +1,8 @@
 package Patterns;
+import Memento.originator;
 
 public class circleShape implements shapeStrategy{
-
+    originator origin;
     private String typeOfShape;
     private String colorOfShape;
     private String originOfShape1;
@@ -35,7 +36,6 @@ public class circleShape implements shapeStrategy{
     }
     public String printShape(){
         String str = typeOfShape+", Color: "+colorOfShape+", Origin: ("+originOfShape1+","+originOfShape2+"), "+"Radius: "+sizeOfShape1;
-
         return str;
     }
 }

@@ -18,7 +18,7 @@ public class UndoCommand implements Command {
         this.crsh = crsh;
         orig = new originator();
 
-        orig.undo();
+        orig.undo(index);
     }
 
     @Override

@@ -1,6 +1,8 @@
 package Patterns;
+import Memento.originator;
 
 public class rectangleShape implements shapeStrategy{
+    originator origin;
     private String typeOfShape;
     private String colorOfShape;
     private String originOfShape1;
@@ -34,7 +36,7 @@ public class rectangleShape implements shapeStrategy{
 
     public String printShape(){
         String str=typeOfShape+", Color: "+colorOfShape+", Origin: ("+originOfShape1+","+originOfShape2+"), "+"Width: "+sizeOfShape1+", Height: "+sizeOfShape2;
-
+        //origin.shapesList.add(str);
         return str;
     }
 }

@@ -12,6 +12,7 @@ public class DeleteCommand implements Command {
         this.crsh = crsh;
         if(index!=-1 && (index <= shapeStrat.shapesList.size()-1)){
             String str = shapeStrat.shapesList.get(index);
+            //System.out.println("index: "+index +str);
             String index1 = String.valueOf(index);
             str = str +" "+index1;
             shapeStrat.deletedShapes.add(str);
