@@ -11,11 +11,11 @@ public  class CreateCommand implements Command{
 
     public CreateCommand(Shape crsh, String[] typeOfShape){
         this.crsh = crsh;
-        System.out.println(typeOfShape[1]);
+        //System.out.println(typeOfShape[1]);
         rectangle = new rectangleShape();
         circle = new circleShape();
         if (typeOfShape[1].equals("RECTANGLE")){
-            System.out.println("inside ");
+            //System.out.println("inside ");
 
             rectangle.setTypeOfShape("Rectangle");
             rectangle.setOriginOfShape1("0");
@@ -28,7 +28,7 @@ public  class CreateCommand implements Command{
 
         }
         else if (typeOfShape[1].equals("CIRCLE")){
-            System.out.println("in circle");
+            //System.out.println("in circle");
             circle.setTypeOfShape("Circle");
             circle.setOriginOfShape1("0");
             circle.setOriginOfShape2("0");

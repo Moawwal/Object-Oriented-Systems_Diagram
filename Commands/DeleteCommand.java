@@ -12,8 +12,8 @@ public class DeleteCommand implements Command {
 
     public DeleteCommand(Shape crsh,int index){
         this.crsh = crsh;
-        System.out.println("IN delete");
-        System.out.println(index);
+        //System.out.println("IN delete");
+        //System.out.println(index);
         if(index!=-1 && (index <= shapeStrat.shapesList.size()-1)){
             String str = shapeStrat.shapesList.get(index);
             //System.out.println(str);

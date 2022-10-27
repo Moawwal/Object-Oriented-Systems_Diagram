@@ -14,7 +14,7 @@ public class ColorCommand implements Command {
         this.crsh = crsh;
         rectangle=new rectangleShape();
         circle= new circleShape();
-        System.out.println(index);
+        //System.out.println(index);
         if (index!=-1 && (index <= shapeStrat.shapesList.size()-1)){
             String str = shapeStrat.shapesList.get(index);
             String strsplit[]=str.split(" ");

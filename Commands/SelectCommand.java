@@ -13,7 +13,7 @@ public class SelectCommand implements Command {
 
     public SelectCommand(Shape crsh, String[] shapeargs, int index,int previndex){
         this.crsh = crsh;
-        System.out.println("In select");
+        //System.out.println("In select");
         int i= Integer.parseInt(shapeargs[1]);
         previndex=index;
         if (i>shapeStrat.shapesList.size()+1){

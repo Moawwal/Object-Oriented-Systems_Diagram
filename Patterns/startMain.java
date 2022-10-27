@@ -3,6 +3,8 @@ import Commands.*;
 
 import java.io.*;
 import java.util.*;
+import Memento.*;
+
 public class startMain {
 
     public static void main(String[] args) throws IOException{
@@ -13,10 +15,11 @@ public class startMain {
         String splitLineArr[];
 
         Shape shape = new Shape();
+        originator origin = new originator();
 
         //LinkedList<String> shapeList = new LinkedList<>();
         LinkedList<String> commandList = new LinkedList<String>();
-        shapeStrategy shateStrat;
+        shapeStrategy shapeStrat;
         int index =-1;
         int prevIndex=index;
 
@@ -28,51 +31,53 @@ public class startMain {
                     //Shape shape = new Shape();
                     CreateCommand cr = new CreateCommand(shape,splitLineArr);
                     //cr.execute();
-                    System.out.println("Create");
+                    //System.out.println("Create");
                     break;
                 case "SELECT":
                     SelectCommand se = new SelectCommand(shape,splitLineArr,index,prevIndex);
                     prevIndex=index;
-                    index= Integer.parseInt(splitLineArr[1]);
-                    System.out.println(index);
-                    System.out.println("select");
+                    index= Integer.parseInt(splitLineArr[1])-1;
+
+                    //System.out.println(index);
+                    //System.out.println("select");
                     break;
                 case "MOVE":
                     MoveCommand mo = new MoveCommand(shape,splitLineArr,index);
                     //mo.execute();
-                    System.out.println("miove");
+                    //System.out.println("miove");
                     break;
                 case "DRAW":
                     DrawCommand draw = new DrawCommand(shape,index);
                     //draw.execute();
-                    System.out.println("draw");
+                    //System.out.println("draw");
                     break;
                 case "COLOR":
                     ColorCommand co = new ColorCommand(shape,splitLineArr,index);
                     //co.execute();
-                    System.out.println("Color");
+                    //System.out.println("Color");
                     break;
                 case "DELETE":
                     DeleteCommand de = new DeleteCommand(shape,index);
                     index=prevIndex;
                     //de.execute();
-                    System.out.println("delete");
+                    //System.out.println("delete");
                     break;
                 case "DRAWSCENE":
                     DrawSceneCommand drsc = new DrawSceneCommand(shape);
                     //drsc.execute();
-                    System.out.println("drsc");
+                    //System.out.println("drsc");
                     break;
                 case "UNDO":
                     UndoCommand undo = new UndoCommand(shape, commandList,index,prevIndex);
                     //undo.undo();
-                    System.out.println("undo");
+                    //System.out.println("undo");
 
                     break;
                 default:
                     System.out.println("Invalid Command");
                     break;
             }
+            origin.write(inputLine);
             if (splitLineArr[0]!="UNDO")
                 commandList.add(inputLine);
             inputLine = br.readLine();
