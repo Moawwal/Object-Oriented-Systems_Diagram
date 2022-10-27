@@ -10,10 +10,10 @@ public class DrawCommand implements Command {
     private SelectCommand secom;
     private shapeStrategy shapeStrat;
 
-    public DrawCommand(Shape crsh){
+    public DrawCommand(Shape crsh,int index){
         this.crsh = crsh;
-        if (secom.index!=-1){
-            String str = shapeStrat.shapesList.get(secom.index);
+        if (index!=-1 && (index <= shapeStrat.shapesList.size()-1)){
+            String str = shapeStrat.shapesList.get(index);
             System.out.println(str);
         }
         else{

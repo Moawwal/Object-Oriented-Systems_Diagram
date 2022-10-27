@@ -10,36 +10,45 @@ public class ColorCommand implements Command {
     private rectangleShape rectangle;
     private circleShape circle;
 
-    public ColorCommand(Shape crsh, String[] shapeargs){
+    public ColorCommand(Shape crsh, String[] shapeargs,int index){
         this.crsh = crsh;
-        if (secom.index!=-1){
-            String str = shapeStrat.shapesList.get(secom.index);
+        rectangle=new rectangleShape();
+        circle= new circleShape();
+        System.out.println(index);
+        if (index!=-1 && (index <= shapeStrat.shapesList.size()-1)){
+            String str = shapeStrat.shapesList.get(index);
             String strsplit[]=str.split(" ");
-            String origin1=strsplit[4].replaceAll(",\\(\\)","");
-            String[] origins=origin1.split("");
-            origin1=origins[0];
-            String origin2=origins[1];
+            //System.out.println(strsplit[4]);
+            String origin1=strsplit[4].replace(","," ");
+           // System.out.println(origin1);
+            String[] origins=origin1.split(" ");
+            origin1=origins[0].replace("(","");
+
+            //origin1=origins[0];
+            String origin2=origins[1].replace(")","");
             String size1=strsplit[6].replace(",","");
             if (strsplit[0]=="Rectangle,") {
                 String size2=strsplit[8];
                 rectangle.setTypeOfShape("Rectangle");
                 rectangle.setColorOfShape(shapeargs[1]);
+                //System.out.println("o1: "+origin1+" o2: "+origin2);
                 rectangle.setOriginOfShape1(origin1);
                 rectangle.setOriginOfShape2(origin2);
                 rectangle.setSizeOfShape1(size1);
                 rectangle.setSizeOfShape2(size2);
-                shapeStrat.shapesList.remove(secom.index);
-                shapeStrat.shapesList.add(secom.index,rectangle.printShape());
+                shapeStrat.shapesList.remove(index);
+                shapeStrat.shapesList.add(index,rectangle.printShape());
                 shapeStrat.prevShapes.add(rectangle.printShape());
             }
             else{
-                circle.setTypeOfShape("Rectangle");
+                circle.setTypeOfShape("Circle");
                 circle.setColorOfShape(shapeargs[1]);
+                //System.out.println("o1: "+origin1+" o2: "+origin2);
                 circle.setOriginOfShape1(origin1);
                 circle.setOriginOfShape2(origin2);
                 circle.setSizeOfShape1(size1);
-                shapeStrat.shapesList.remove(secom.index);
-                shapeStrat.shapesList.add(secom.index,circle.printShape());
+                shapeStrat.shapesList.remove(index);
+                shapeStrat.shapesList.add(index,circle.printShape());
                 shapeStrat.prevShapes.add(circle.printShape());
             }
         }

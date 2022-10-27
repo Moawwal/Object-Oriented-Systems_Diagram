@@ -8,16 +8,23 @@ public class DeleteCommand implements Command {
     private Shape crsh;
     //private String typeOfShape;
     private shapeStrategy shapeStrat;
-    private SelectCommand secom;
+    //private SelectCommand secom;
 
-    public DeleteCommand(Shape crsh){
+    public DeleteCommand(Shape crsh,int index){
         this.crsh = crsh;
-        if(secom.index!=-1){
-            String str = shapeStrat.shapesList.get(secom.index);
-            String index = String.valueOf(secom.index);
-            str = str +" "+index;
+        System.out.println("IN delete");
+        System.out.println(index);
+        if(index!=-1 && (index <= shapeStrat.shapesList.size()-1)){
+            String str = shapeStrat.shapesList.get(index);
+            //System.out.println(str);
+            String index1 = String.valueOf(index);
+            //System.out.println("index1");
+            str = str +" "+index1;
+            //System.out.println("str");
             shapeStrat.deletedShapes.add(str);
-            shapeStrat.shapesList.remove(secom.index);
+            //System.out.println("add to delete list");
+            shapeStrat.shapesList.remove(index);
+            //System.out.println("remove from list");
         }
         else {
             System.out.println("ERROR: no shape selected to delete");

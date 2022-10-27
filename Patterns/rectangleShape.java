@@ -33,9 +33,9 @@ public class rectangleShape implements shapeStrategy{
     }
 
     public String printShape(){
-        String str=typeOfShape+", "+colorOfShape+": ("+originOfShape1+","+originOfShape2+"), "+"Width: "+sizeOfShape1+", Height: "+sizeOfShape2;
+        String str=typeOfShape+", Color: "+colorOfShape+", Origin: ("+originOfShape1+","+originOfShape2+"), "+"Width: "+sizeOfShape1+", Height: "+sizeOfShape2;
 
-        System.out.println(typeOfShape+", "+colorOfShape+": ("+originOfShape1+","+originOfShape2+"), "+"Width: "+sizeOfShape1+", Height: "+sizeOfShape2);
+        //System.out.println(typeOfShape+", "+colorOfShape+": ("+originOfShape1+","+originOfShape2+"), "+"Width: "+sizeOfShape1+", Height: "+sizeOfShape2);
         return str;
     }
 }

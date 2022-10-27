@@ -6,6 +6,7 @@ public interface shapeStrategy {
      ArrayList<String> shapesList = new ArrayList<String>();
      ArrayList<String> deletedShapes = new ArrayList<String>();
      ArrayList<String> prevShapes = new ArrayList<String>();
+
      void setTypeOfShape(String type);
      void setColorOfShape(String color);
     void setOriginOfShape1(String origin1);
