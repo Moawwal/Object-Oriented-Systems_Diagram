@@ -36,7 +36,6 @@ public class circleShape implements shapeStrategy{
     public String printShape(){
         String str = typeOfShape+", Color: "+colorOfShape+", Origin: ("+originOfShape1+","+originOfShape2+"), "+"Radius: "+sizeOfShape1;
 
-        //System.out.println(typeOfShape+", "+colorOfShape+", ("+originOfShape1+","+originOfShape2+"), "+"Radius: "+sizeOfShape1);
         return str;
     }
 }

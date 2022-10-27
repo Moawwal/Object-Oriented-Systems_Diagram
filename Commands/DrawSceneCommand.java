@@ -6,7 +6,6 @@ import Patterns.shapeStrategy;
 
 public class DrawSceneCommand implements Command {
     private Shape crsh;
-    //private String typeOfShape;
     private shapeStrategy shapeStrat;
 
     public DrawSceneCommand(Shape crsh){

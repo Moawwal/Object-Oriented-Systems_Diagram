@@ -4,7 +4,6 @@ import Patterns.*;
 
 public class MoveCommand implements Command {
     private Shape crsh;
-    //private String typeOfShape;
     private shapeStrategy shapeStrat;
     private SelectCommand secom;
     private rectangleShape rectangle;
@@ -14,18 +13,12 @@ public class MoveCommand implements Command {
         this.crsh = crsh;
         rectangle = new rectangleShape();
         circle = new circleShape();
-        //secom = new SelectCommand();
-        //System.out.println("In Move");
-        //System.out.println(index);
 
         if (index!=-1 && (index <= shapeStrat.shapesList.size()-1)){
             String str = shapeStrat.shapesList.get(index);
 
             String strsplit[]=str.split(" ");
-            //System.out.println(strsplit[4]);
             String color=strsplit[2].replace(",","");
-            //String size1=strsplit[4].replace(",","");
-            //System.out.println(strsplit[0]);
             if (strsplit[0].equals("Rectangle,")) {
                 String size1=strsplit[6].replace(",","");
                 String size2=strsplit[8];
@@ -41,7 +34,6 @@ public class MoveCommand implements Command {
             }
             else{
                 String size1=strsplit[6];
-                //System.out.println(size1);
                 circle.setTypeOfShape("Circle");
                 circle.setColorOfShape(color);
                 circle.setOriginOfShape1(shapeargs[1]);

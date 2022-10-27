@@ -6,7 +6,6 @@ import Patterns.shapeStrategy;
 
 public class DrawCommand implements Command {
     private Shape crsh;
-    //private String typeOfShape;
     private SelectCommand secom;
     private shapeStrategy shapeStrat;
 
